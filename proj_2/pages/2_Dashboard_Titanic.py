@@ -12,18 +12,18 @@ PARENT_DIR = os.path.join(FILE_DIR, os.pardir)
 dir_of_interest = os.path.join(PARENT_DIR, "resources")
 
 IMAGE_PATH = os.path.join(dir_of_interest, "images", "titanic.jpg")
-DATA_PATH = os.path.join(dir_of_interest, "data", "titanic.csv")
+DATA_PATH = os.path.join(dir_of_interest, "data", "tips.csv")
 
 img = image.imread(IMAGE_PATH)
 st.image(img)
 df = pd.read_csv(DATA_PATH)
 st.dataframe(df)
-class1 = st.selectbox("Select the who:", df['who'].unique())
+class1 = st.selectbox("Select the total_bill:", df['total_bill'].unique())
 
 col1, col2 = st.columns(2)
 
-fig_1 = px.histogram(df[df['who'] == class1], x="fare")
+fig_1 = px.histogram(df[df['total_bill'] == class1], x="tip")
 col1.plotly_chart(fig_1, use_container_width=True)
 
-fig_2 = px.box(df[df['who'] == class1], y="sibsp")
+fig_2 = px.box(df[df['total_bill'] == class1], y="sex")
 col2.plotly_chart(fig_2, use_container_width=True)
