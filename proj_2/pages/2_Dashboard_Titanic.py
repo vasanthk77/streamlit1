@@ -16,12 +16,12 @@ DATA_PATH = os.path.join(dir_of_interest, "data", "titanic.csv")
 
 img = image.imread(IMAGE_PATH)
 st.image(img)
-class1 = st.selectbox("Select the class:", df['class'].unique())
+class1 = st.selectbox("Select the who:", df['who'].unique())
 
 col1, col2 = st.columns(2)
 
-fig_1 = px.histogram(df[df['class'] == class1], x="fare")
+fig_1 = px.histogram(df[df['who'] == class1], x="fare")
 col1.plotly_chart(fig_1, use_container_width=True)
 
-fig_2 = px.box(df[df['class'] == class1], y="fare")
+fig_2 = px.box(df[df['who'] == class1], y="fare")
 col2.plotly_chart(fig_2, use_container_width=True)
