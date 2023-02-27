@@ -2,6 +2,7 @@ import streamlit as st
 from matplotlib import image
 import os
 import pandas as pd
+import plotly.express as px
 
 st.title("Dashboard - Tips Data")
 
