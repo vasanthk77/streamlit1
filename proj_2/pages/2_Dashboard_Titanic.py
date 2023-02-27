@@ -16,6 +16,8 @@ DATA_PATH = os.path.join(dir_of_interest, "data", "titanic.csv")
 
 img = image.imread(IMAGE_PATH)
 st.image(img)
+df = pd.read_csv(DATA_PATH)
+st.dataframe(df)
 class1 = st.selectbox("Select the who:", df['who'].unique())
 
 col1, col2 = st.columns(2)
