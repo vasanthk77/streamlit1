@@ -25,5 +25,5 @@ col1, col2 = st.columns(2)
 fig_1 = px.histogram(df[df['who'] == class1], x="fare")
 col1.plotly_chart(fig_1, use_container_width=True)
 
-fig_2 = px.box(df[df['who'] == class1], y="fare")
+fig_2 = px.box(df[df['who'] == class1], y="sibsp")
 col2.plotly_chart(fig_2, use_container_width=True)
