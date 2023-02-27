@@ -1,8 +1,9 @@
 import streamlit as st
 from matplotlib import image
 import os
+import pandas as pd
 
-st.title("Dashboard - Titanic Data")
+st.title("Dashboard - Tips Data")
 
 # absolute path to this file
 FILE_DIR = os.path.dirname(os.path.abspath(__file__))
